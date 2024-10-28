@@ -1,8 +1,8 @@
-# Projeto de Criptografia Assimétrica com Node.js e JavaScript ![alt text](image.png)
+# Projeto de Criptografia Assimétrica com Node.js e JavaScript
 
 Este projeto demonstra o uso de criptografia assimétrica em JavaScript com a biblioteca crypto do Node.js, criando uma interface web para criptografar e descriptografar mensagens. A criptografia assimétrica utiliza um par de chaves (pública e privada), permitindo que uma mensagem seja criptografada com a chave pública e descriptografada apenas com a chave privada, garantindo a segurança dos dados.
 
-## Estrutura do Projeto ![alt text](image-1.png)
+## Estrutura do Projeto
 
 - **criptografar.html**: Página onde o usuário digita uma mensagem para criptografar. Ao enviar, o texto é criptografado.
 
