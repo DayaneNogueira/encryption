@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Criptografar Mensagem</title>
+</head>
+<body>
+  <h1>Criptografar uma Mensagem</h1>
+  <textarea id="mensagem" placeholder="Digite a mensagem aqui..."></textarea>
+  <button onclick="criptografar()">Criptografar</button>
+  <p>Mensagem Criptografada:</p>
+  <p id="mensagemCriptografada"></p>
+
+  <script>
+    async function criptografar() {
+      const mensagem = document.getElementById('mensagem').value;
+      const resposta = await fetch('http://localhost:3000/criptografar', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ mensagem })
+      });
+      const data = await resposta.json();
+      document.getElementById('mensagemCriptografada').innerText = data.mensagemCriptografada;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Descriptografar Mensagem</title>
+</head>
+<body>
+  <h1>Descriptografar uma Mensagem</h1>
+  <textarea id="mensagemCriptografada" placeholder="Digite a mensagem criptografada..."></textarea>
+  <button onclick="descriptografar()">Descriptografar</button>
+  <p>Mensagem Original:</p>
+  <p id="mensagemOriginal"></p>
+
+  <script>
+    async function descriptografar() {
+      const mensagemCriptografada = document.getElementById('mensagemCriptografada').value;
+      const resposta = await fetch('http://localhost:3000/descriptografar', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ mensagemCriptografada })
+      });
+      const data = await resposta.json();
+      document.getElementById('mensagemOriginal').innerText = data.mensagemOriginal;
+    }
+  </script>
+</body>
+</html>
